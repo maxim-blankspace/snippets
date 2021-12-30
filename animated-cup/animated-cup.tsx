@@ -24,7 +24,7 @@ const AnimatedCup = ({ progress }: CupProps) => {
     lottieRef?.current.play(36.9, 55)
     cupTransY.value = withDelay(
       600,
-      withTiming((vs(-52) * progress) / 100, {
+      withTiming((vs(-51) * progress) / 100, {
         duration: 900,
         easing: Easing.out(Easing.cubic),
       }),
@@ -38,15 +38,15 @@ const AnimatedCup = ({ progress }: CupProps) => {
           ref={lottieRef}
           loop={false}
           speed={0.7}
-          source={require('@assets/animations/droplet2.json')}
+          source={require('@assets/animations/cupDroplet.json')}
           style={styles.droplet}
         />
       </Box>
       <Animated.View style={[animatedCup, styles.liquidWrapper]}>
-        <Image source={require('@assets/images/liquid4.png')} style={styles.liquid} />
+        <Image source={require('@assets/images/cupLiquid.png')} style={styles.liquid} />
       </Animated.View>
       <Box position="absolute">
-        <Image source={require('@assets/images/cup3.png')} style={styles.cup} />
+        <Image source={require('@assets/images/cupMask.png')} style={styles.cup} />
       </Box>
     </Box>
   )
