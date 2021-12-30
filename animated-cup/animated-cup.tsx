@@ -20,15 +20,17 @@ const AnimatedCup = ({ progress }: CupProps) => {
   })
 
   useEffect(() => {
-    lottieRef?.current.play(36.8, 36.9)
-    lottieRef?.current.play(36.9, 55)
-    cupTransY.value = withDelay(
-      600,
-      withTiming((vs(-51) * progress) / 100, {
-        duration: 900,
-        easing: Easing.out(Easing.cubic),
-      }),
-    )
+    setTimeout(() => {
+      lottieRef?.current.play(36.8, 36.9)
+      lottieRef?.current.play(36.9, 55)
+      cupTransY.value = withDelay(
+        600,
+        withTiming((vs(-51) * progress) / 100, {
+          duration: 900,
+          easing: Easing.out(Easing.cubic),
+        }),
+      )
+    }, 0)
   }, [])
 
   return (
